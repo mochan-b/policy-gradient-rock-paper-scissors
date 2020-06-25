@@ -2,7 +2,7 @@
 import numpy as np
 import random
 
-from game import sample_from_d, play_tictactoe
+from game import sample_from_dist, play_tictactoe
 from model import State, Action
 
 def test_state():
@@ -19,7 +19,7 @@ def test_sample_from_d():
     selections = [0, 0, 0]
     random.seed(1)
     for i in range(100):
-        j = sample_from_d(d)
+        j = sample_from_dist(d)
         selections[j] += 1
 
     assert (selections == [80, 11, 9])
